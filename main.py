@@ -81,7 +81,7 @@ class VideoRecorder:
 		# Writer setup
 		self.video_writer = cv.VideoWriter()
 		current_time = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-		video_file = f"output/{current_time}.mp4"
+		video_file = f"{current_time}.mp4"
 		codec = cv.VideoWriter_fourcc(*"mp4v")
 
 		# Open window
