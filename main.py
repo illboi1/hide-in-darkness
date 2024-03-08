@@ -61,6 +61,8 @@ class VideoRecorder:
 				y_begin, y_end = y_end, y_begin
 
 			img_grayscale = self.filter_contrast * cv.cvtColor(image, cv.COLOR_BGR2GRAY) + self.filter_brightness
+			img_grayscale[img_grayscale < 0] = 0
+			img_grayscale[img_grayscale > 255] = 255
 			img_copy[y_begin:y_end, x_begin:x_end, 0] = img_grayscale[y_begin:y_end, x_begin:x_end]
 			img_copy[y_begin:y_end, x_begin:x_end, 1] = img_grayscale[y_begin:y_end, x_begin:x_end]
 			img_copy[y_begin:y_end, x_begin:x_end, 2] = img_grayscale[y_begin:y_end, x_begin:x_end]
